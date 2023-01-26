@@ -1,9 +1,11 @@
 import React from 'react';
+import GameField from '../GameField/GameField';
+import styles from './styles.module.scss';
 
 function App() {
   return (
-    <div>
-      <h1>Hello world</h1>
+    <div className={styles.wrapper}>
+      <GameField />
     </div>
   );
 }
