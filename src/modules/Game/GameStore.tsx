@@ -12,9 +12,12 @@ class GameStore {
 
   private readonly cellData: GameCellData[];
 
+  private score: number;
+
   constructor() {
     this.rowSize = GameStore.DEFAULT_ROW_SIZE;
     this.gameSize = this.rowSize ** 2;
+    this.score = 0;
     this.cellData = this.initCellData();
     makeAutoObservable(this);
   }
@@ -33,8 +36,27 @@ class GameStore {
     return this.cellData;
   }
 
+  /**
+   * Получить пустые ячейки.
+   * @private
+   */
   private getEmptyCells() {
     return this.cellData.filter((cell) => cell.value === 0);
+  }
+
+  /**
+   * Получить текущий счёт.
+   */
+  public getScore() {
+    return this.score;
+  }
+
+  /**
+   * Обновить текущий счёт.
+   * @private
+   */
+  private updateScore() {
+    this.score = this.cellData.reduce((acc: number, data: GameCellData) => acc + data.value, 0);
   }
 
   /**
@@ -59,7 +81,7 @@ class GameStore {
       });
 
       if (isGameOver) {
-        console.log('Game Over');
+        setTimeout(() => alert(`Game Over. Your score is ${this.score}`), 0);
       }
     }
   }
@@ -74,6 +96,8 @@ class GameStore {
       const randomIndex = Math.floor(Math.random() * emptyCells.length);
 
       emptyCells[randomIndex].value = 2;
+
+      this.updateScore();
     }
   }
 

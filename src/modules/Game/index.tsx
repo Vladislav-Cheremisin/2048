@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { observer } from 'mobx-react';
 import GameStore from './GameStore';
 import GameField from './dependencies/GameField';
+import GameScore from './dependencies/GameScore';
 
 function Game() {
-  const store = new GameStore();
+  const store = useMemo(() => new GameStore(), []);
 
   useEffect(() => {
     store.fillEmptyCell();
@@ -15,10 +16,13 @@ function Game() {
   }, []);
 
   return (
-    <GameField
-      rowSize={store.getRowSize()}
-      cellData={store.getCellData()}
-    />
+    <>
+      <GameField
+        rowSize={store.getRowSize()}
+        cellData={store.getCellData()}
+      />
+      <GameScore score={store.getScore()} />
+    </>
   );
 }
 
