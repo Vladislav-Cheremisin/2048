@@ -1,11 +1,11 @@
 import React from 'react';
-import GameField from '../GameField/GameField';
 import styles from './styles.module.scss';
+import Game from '../Game';
 
 function App() {
   return (
     <div className={styles.wrapper}>
-      <GameField />
+      <Game />
     </div>
   );
 }
