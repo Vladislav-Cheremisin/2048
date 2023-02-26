@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a46476b6-6108-47f7-8db6-ecb816c6fd98" name="Changes" comment="" />
+    <list default="true" id="a46476b6-6108-47f7-8db6-ecb816c6fd98" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/index-1f5cbfe2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/index-cbc41373.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.svg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
