@@ -82,6 +82,7 @@ class GameStore {
 
       if (isGameOver) {
         setTimeout(() => alert(`Game Over. Your score is ${this.score}`), 0);
+        localStorage.setItem('GameCellData', JSON.stringify(this.createCellData()));
       }
     }
   }
