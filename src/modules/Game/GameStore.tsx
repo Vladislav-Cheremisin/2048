@@ -10,15 +10,15 @@ class GameStore {
 
   private readonly gameSize: number;
 
-  private readonly cellData: GameCellData[];
+  private cellData: GameCellData[];
 
   private score: number;
 
   constructor() {
     this.rowSize = GameStore.DEFAULT_ROW_SIZE;
     this.gameSize = this.rowSize ** 2;
+    this.cellData = [];
     this.score = 0;
-    this.cellData = this.initCellData();
     makeAutoObservable(this);
   }
 
@@ -87,9 +87,16 @@ class GameStore {
   }
 
   /**
+   * Сохранить данные ячеек в local storage.
+   */
+  private saveCellData(): void {
+    localStorage.setItem('GameCellData', JSON.stringify(this.cellData));
+  }
+
+  /**
    * Заполнить одну из пустых ячеек (проставить value 2).
    */
-  public fillEmptyCell(): void {
+  private fillEmptyCell(): void {
     const emptyCells = this.getEmptyCells();
 
     if (emptyCells.length) {
@@ -98,6 +105,7 @@ class GameStore {
       emptyCells[randomIndex].value = 2;
 
       this.updateScore();
+      this.saveCellData();
     }
   }
 
@@ -108,7 +116,7 @@ class GameStore {
    * @param needNewCell Нужно ли создать новую ячейку с значением 2.
    * (служебный аргумент, станет true в ходе рекурсии, если на поле произошли изменения).
    */
-  public makeMove(
+  private makeMove(
     direction: MoveDirections,
     row: number = 1,
     needNewCell = false,
@@ -212,10 +220,10 @@ class GameStore {
   }
 
   /**
-   * Инициализировать значения ячеек.
+   * Создать данные ячеек.
    * @private
    */
-  private initCellData(): GameCellData[] {
+  private createCellData(): GameCellData[] {
     const cellData: GameCellData[] = [];
     let column = 1;
     let row = 1;
@@ -237,6 +245,29 @@ class GameStore {
     }
 
     return cellData;
+  }
+
+  /**
+   * Получить данные ячеек из local storage.
+   * Если данных нет - инициализируем их.
+   */
+  private loadCellData():GameCellData[] {
+    const localData = localStorage.getItem('GameCellData');
+
+    return localData ? JSON.parse((localData)) : this.createCellData();
+  }
+
+  /**
+   * Начать игру.
+   */
+  public startGame() {
+    this.cellData = this.loadCellData();
+
+    this.updateScore();
+
+    if (this.score === 0) {
+      this.fillEmptyCell();
+    }
   }
 
   /**

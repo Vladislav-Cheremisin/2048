@@ -8,7 +8,7 @@ function Game() {
   const store = useMemo(() => new GameStore(), []);
 
   useEffect(() => {
-    store.fillEmptyCell();
+    store.startGame();
 
     window.addEventListener('keydown', (event: KeyboardEvent) => {
       store.moveOnKey(event.code);
