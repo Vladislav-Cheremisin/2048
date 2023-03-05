@@ -163,10 +163,6 @@ and (max-width: 550px){
     height: 300px;
   }
 
-  .score {
-    font-size: 1rem;
-  }
-
   .game_cell {
     font-size: 1.5rem;
   }
@@ -174,36 +170,10 @@ and (max-width: 550px){
 
 @media screen
 and (orientation: portrait)
-and (max-width: 450px){
+and (max-width: 300px){
   .game {
     grid-gap: 3px;
-    width: 200px;
-    height: 200px;
-  }
-
-  .score {
-    font-size: 1rem;
-  }
-
-  .game_cell {
-    font-size: 1rem;
-  }
-}
-
-@media screen
-and (orientation: portrait)
-and (max-width: 350px){
-  .game {
-    grid-gap: 2px;
-    width: 150px;
-    height: 150px;
-  }
-
-  .score {
-    font-size: 0.5rem;
-  }
-
-  .game_cell {
-    font-size: 0.5rem;
+    width: 250px;
+    height: 250px;
   }
 }
