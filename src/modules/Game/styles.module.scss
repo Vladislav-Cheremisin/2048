@@ -25,3 +25,185 @@
   font-family: "Roboto Light", sans-serif;
   color: #838383
 }
+
+/**
+ * Адаптивность для landscape ориентации.
+ */
+@media screen
+and (orientation: landscape)
+and (max-height: 950px){
+  .game {
+    width: 500px;
+    height: 500px;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+
+  .game_cell {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen
+and (orientation: landscape)
+and (max-height: 700px){
+  .game {
+    width: 400px;
+    height: 400px;
+  }
+
+  .score {
+    font-size: 1.5rem;
+  }
+
+  .game_cell {
+    font-size: 2rem;
+  }
+}
+
+@media screen
+and (orientation: landscape)
+and (max-height: 600px){
+  .game {
+    grid-gap: 3px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .score {
+    font-size: 1rem;
+  }
+
+  .game_cell {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen
+and (orientation: landscape)
+and (max-height: 450px){
+  .game {
+    grid-gap: 3px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .score {
+    font-size: 1rem;
+  }
+
+  .game_cell {
+    font-size: 1rem;
+  }
+}
+
+@media screen
+and (orientation: landscape)
+and (max-height: 350px){
+  .game {
+    grid-gap: 2px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .score {
+    font-size: 0.5rem;
+  }
+
+  .game_cell {
+    font-size: 0.5rem;
+  }
+}
+
+/**
+ * Адаптивность для portrait ориентации.
+ */
+@media screen
+and (orientation: portrait)
+and (max-width: 950px){
+  .game {
+    width: 500px;
+    height: 500px;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+
+  .game_cell {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen
+and (orientation: portrait)
+and (max-width: 700px){
+  .game {
+    width: 400px;
+    height: 400px;
+  }
+
+  .score {
+    font-size: 1.5rem;
+  }
+
+  .game_cell {
+    font-size: 2rem;
+  }
+}
+
+@media screen
+and (orientation: portrait)
+and (max-width: 550px){
+  .game {
+    grid-gap: 3px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .score {
+    font-size: 1rem;
+  }
+
+  .game_cell {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen
+and (orientation: portrait)
+and (max-width: 450px){
+  .game {
+    grid-gap: 3px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .score {
+    font-size: 1rem;
+  }
+
+  .game_cell {
+    font-size: 1rem;
+  }
+}
+
+@media screen
+and (orientation: portrait)
+and (max-width: 350px){
+  .game {
+    grid-gap: 2px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .score {
+    font-size: 0.5rem;
+  }
+
+  .game_cell {
+    font-size: 0.5rem;
+  }
+}
