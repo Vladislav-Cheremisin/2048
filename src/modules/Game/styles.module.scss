@@ -31,10 +31,10 @@
  */
 @media screen
 and (orientation: landscape)
-and (max-height: 950px){
+and (max-height: 880px){
   .game {
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
   }
 
   .score {
@@ -48,7 +48,7 @@ and (max-height: 950px){
 
 @media screen
 and (orientation: landscape)
-and (max-height: 700px){
+and (max-height: 750px){
   .game {
     width: 400px;
     height: 400px;
