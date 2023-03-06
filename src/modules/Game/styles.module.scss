@@ -15,6 +15,7 @@
   color: #313131;
   font-family: "Roboto Light", sans-serif;
   font-size: 3.5rem;
+  user-select: none;
 }
 
 .score {
@@ -38,6 +39,8 @@ and (max-height: 880px){
   }
 
   .score {
+    right: 2rem;
+    top: 2rem;
     font-size: 2rem;
   }
 
@@ -55,6 +58,8 @@ and (max-height: 750px){
   }
 
   .score {
+    right: 1.5rem;
+    top: 1.5rem;
     font-size: 1.5rem;
   }
 
@@ -73,6 +78,8 @@ and (max-height: 600px){
   }
 
   .score {
+    right: 1rem;
+    top: 1rem;
     font-size: 1rem;
   }
 
@@ -91,6 +98,8 @@ and (max-height: 450px){
   }
 
   .score {
+    right: 1rem;
+    top: 1rem;
     font-size: 1rem;
   }
 
@@ -109,6 +118,8 @@ and (max-height: 350px){
   }
 
   .score {
+    right: 0.5rem;
+    top: 0.5rem;
     font-size: 0.5rem;
   }
 
@@ -129,6 +140,8 @@ and (max-width: 950px){
   }
 
   .score {
+    right: 2rem;
+    top: 2rem;
     font-size: 2rem;
   }
 
@@ -146,6 +159,8 @@ and (max-width: 700px){
   }
 
   .score {
+    right: 1.5rem;
+    top: 1.5rem;
     font-size: 1.5rem;
   }
 
@@ -163,6 +178,11 @@ and (max-width: 550px){
     height: 300px;
   }
 
+  .score {
+    right: 1rem;
+    top: 1rem;
+  }
+
   .game_cell {
     font-size: 1.5rem;
   }
@@ -170,7 +190,7 @@ and (max-width: 550px){
 
 @media screen
 and (orientation: portrait)
-and (max-width: 300px){
+and (max-width: 320px){
   .game {
     grid-gap: 3px;
     width: 250px;

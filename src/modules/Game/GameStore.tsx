@@ -117,7 +117,7 @@ class GameStore {
    * @param needNewCell Нужно ли создать новую ячейку с значением 2.
    * (служебный аргумент, станет true в ходе рекурсии, если на поле произошли изменения).
    */
-  private makeMove(
+  public makeMove(
     direction: MoveDirections,
     row: number = 1,
     needNewCell = false,
@@ -195,28 +195,6 @@ class GameStore {
     if (row === this.rowSize && somethingChanged) {
       this.fillEmptyCell();
       this.endGame();
-    }
-  }
-
-  /**
-   * Слушатель для event keydown.
-   * @param keyCode event.code.
-   */
-  public moveOnKey(keyCode: string) {
-    if (keyCode === 'ArrowRight') {
-      this.makeMove('right');
-    }
-
-    if (keyCode === 'ArrowLeft') {
-      this.makeMove('left');
-    }
-
-    if (keyCode === 'ArrowDown') {
-      this.makeMove('down');
-    }
-
-    if (keyCode === 'ArrowUp') {
-      this.makeMove('up');
     }
   }
 
