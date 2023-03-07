@@ -19,7 +19,7 @@ class GameStore {
     this.gameSize = this.rowSize ** 2;
     this.cellData = [];
     this.score = 0;
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { autoBind: true });
   }
 
   /**
@@ -81,8 +81,13 @@ class GameStore {
       });
 
       if (isGameOver) {
+        const newCellData = this.createCellData();
+
+        localStorage.setItem('GameCellData', JSON.stringify(newCellData));
         setTimeout(() => alert(`Game Over. Your score is ${this.score}`), 0);
-        localStorage.setItem('GameCellData', JSON.stringify(this.createCellData()));
+
+        this.cellData = newCellData;
+        this.fillEmptyCell();
       }
     }
   }
