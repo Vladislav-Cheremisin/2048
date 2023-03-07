@@ -81,13 +81,15 @@ class GameStore {
       });
 
       if (isGameOver) {
-        const newCellData = this.createCellData();
+        setTimeout(() => {
+          const newCellData = this.createCellData();
+          localStorage.setItem('GameCellData', JSON.stringify(newCellData));
 
-        localStorage.setItem('GameCellData', JSON.stringify(newCellData));
-        setTimeout(() => alert(`Game Over. Your score is ${this.score}`), 0);
+          alert(`Game Over. Your score is ${this.score}`);
 
-        this.cellData = newCellData;
-        this.fillEmptyCell();
+          this.cellData = newCellData;
+          this.fillEmptyCell();
+        }, 0);
       }
     }
   }
