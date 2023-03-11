@@ -211,23 +211,12 @@ class GameStore {
    */
   private createCellData(): GameCellData[] {
     const cellData: GameCellData[] = [];
-    let column = 1;
-    let row = 1;
 
     for (let i = 1; i <= this.gameSize; i += 1) {
       cellData.push({
         id: uuid(),
         value: 0,
-        row,
-        column,
       });
-
-      column += 1;
-
-      if (i % this.rowSize === 0) {
-        column = 1;
-        row += 1;
-      }
     }
 
     return cellData;

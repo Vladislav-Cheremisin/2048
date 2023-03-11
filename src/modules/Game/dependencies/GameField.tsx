@@ -28,7 +28,6 @@ function GameField({ rowSize, cellData, makeMove }: GameFieldProps) {
    * Слушатель для pointerup.
    */
   const onPointerUp = (event: PointerEvent) => {
-
     const newXCoords = event.x;
     const newYCoords = event.y;
     let xDiff;
@@ -68,7 +67,7 @@ function GameField({ rowSize, cellData, makeMove }: GameFieldProps) {
       gameField.current.addEventListener('pointerdown', onPointerDown);
       window.addEventListener('pointerup', onPointerUp);
     }
-  }, [])
+  }, []);
 
   return (
     <div
@@ -83,8 +82,6 @@ function GameField({ rowSize, cellData, makeMove }: GameFieldProps) {
         cellData.map((data) => (
           <GameCell
             value={data.value}
-            row={data.row}
-            column={data.column}
             bgColor={GameStore.getColor(data.value)}
             key={data.id}
           />
