@@ -244,41 +244,6 @@ class GameStore {
       this.fillEmptyCell();
     }
   }
-
-  /**
-   * Определить background-color для ячейки в зависимости от её value.
-   * @param value значение ячейки.
-   */
-  static getColor(value: number): string {
-    switch (value) {
-      case 0:
-        return '#313131';
-      case 2:
-        return '#148F77';
-      case 4:
-        return '#117A65';
-      case 8:
-        return '#1E8449';
-      case 16:
-        return '#239B56';
-      case 32:
-        return '#B7950B';
-      case 64:
-        return '#B9770E';
-      case 128:
-        return '#AF601A';
-      case 256:
-        return '#A04000';
-      case 512:
-        return '#CB4335';
-      case 1024:
-        return '#B03A2E';
-      case 2048:
-        return '#ab3226';
-      default:
-        return '#c03528';
-    }
-  }
 }
 
 export default GameStore;

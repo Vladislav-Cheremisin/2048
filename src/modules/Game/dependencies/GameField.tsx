@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { observer } from 'mobx-react';
 import GameCell from './GameCell';
-import GameStore from '../GameStore';
 import styles from '../styles.module.scss';
 import { GameCellData, MoveDirections } from '../types';
 
@@ -82,7 +81,6 @@ function GameField({ rowSize, cellData, makeMove }: GameFieldProps) {
         cellData.map((data) => (
           <GameCell
             value={data.value}
-            bgColor={GameStore.getColor(data.value)}
             key={data.id}
           />
         ))
